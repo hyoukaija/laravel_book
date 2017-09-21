@@ -8,6 +8,10 @@ use App\Tool\Validate\ValidateCode;
 use Illuminate\Http\Request;
 use App\Tool\SMS\SendTemplateSMS;
 use App\Entity\TempPhone;
+use App\Entity\TempEmail;
+use App\Entity\Member;
+
+
 use App\Models\M3Result;
 
 
@@ -75,7 +79,7 @@ class ValidateController extends Controller
       }
 
       $member = Member::find($member_id);
-      $member->active = 1;
+      $member->active = 1; 
       $member->save();
 
       return redirect('/login');

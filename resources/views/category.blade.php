@@ -51,7 +51,6 @@
 				return;
 			}
 			
-			console.log(data);
 			$('.weui_cells_access').html('');
 			for(var i=0; i<data.categorys.length; i++) {
         		var next = '/product/category_id/' + data.categorys[i].id;

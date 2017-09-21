@@ -113,6 +113,7 @@ class MemberController extends Controller
       $tempEmail->deadline = date('Y-m-d H-i-s', time() + 24*60*60);
       $tempEmail->save();
 
+
       Mail::send('email_register', ['m3_email' => $m3_email], function ($m) use ($m3_email) {
           // $m->from('hello@app.com', 'Your Application');
           $m->to($m3_email->to, '尊敬的用户')

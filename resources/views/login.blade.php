@@ -121,7 +121,12 @@
         $('.bk_toptips span').html('登陆成功');
         setTimeout(function(){$('.bk_toptips').hide()},2000);
 
-        location.href = "/category";
+        var return_url = "{{$return_url}}";
+        if(return_url != ""){
+          location.href = "{{$return_url}}";
+        }else{
+          location.href = "/category";
+        }
       },
       error:function(xhr,status,error){
         console.log(xhr);

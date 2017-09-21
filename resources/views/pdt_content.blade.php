@@ -6,7 +6,7 @@
 
 
 @section('content')
-	<link rel="stylesheet" href="/css/swipe.css">
+	
 <div class="page bk_content" style="top:0;">
 	<div class="addWrap">
 		<div class="swipe" id="mySwipe">
@@ -39,7 +39,9 @@
 	<div class="weui_cells">
 		<div class="weui_cell">
 			<p>
-				{!!$pdt_content->content!!}
+				@if ($pdt_content != null)
+					{!!$pdt_content->content!!}
+				@endif
 			</p>
 		</div>
 	</div>
@@ -58,7 +60,7 @@
 
 
 @section('my-js')
-	<script src="/js/swipe.min.js"></script>
+	
 	<script>
 		var bullets = document.getElementById('position').getElementsByTagName('li');
 		Swipe(document.getElementById('mySwipe'),{
@@ -82,7 +84,6 @@
 			dataType:'json',
 			cache:false,
 			success:function(data){
-				console.log(data);
 			if(data == null){
 			  	$('.bk_toptips').show();
 			  	$('.bk_toptips span').html('服务端错误');
@@ -106,6 +107,10 @@
 				console.log(error);
 			}
 			});
+		}
+
+		function _toCart(){
+			location.href = '/cart';
 		}
 	</script>
 @endsection

@@ -3,3 +3,5 @@
 Homestead.yaml
 Homestead.json
 .env
+gulpfile.js
+/node_modules
